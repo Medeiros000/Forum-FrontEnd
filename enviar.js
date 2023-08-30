@@ -40,9 +40,9 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
     var senha = document.getElementById("senha").value; 
     
     var data = {
-        "nome": nome,
-        "email": email,
-        "senha": senha
+        "nome": '"'+nome+'"',
+        "email": '"'+email+'"',
+        "senha": '"'+senha+'"'
     };
     console.log(data);
     fetch("https://forum-api-jr.up.railway.app/usuarios", {
