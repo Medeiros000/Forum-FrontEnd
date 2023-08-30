@@ -40,20 +40,20 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
     var senha = document.getElementById("senha").value; 
     
     var data = {
-        "nome": '"'+nome+'"',
-        "email": '"'+email+'"',
-        "senha": '"'+senha+'"'
+        "nome": nome,
+        "email": email,
+        "senha": senha
     };
     console.log(data);
     fetch("https://forum-api-jr.up.railway.app/usuarios", {
         method: "POST",
+        body: JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+            "Content-Type": "application/json; charset=UTF-8"
+        }        
     })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
         document.getElementById("resposta").innerHTML = "Formulário enviado com sucesso!";
     })
     .catch(error => {
