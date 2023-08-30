@@ -49,7 +49,10 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
         method: "POST",
         body: JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json; charset=UTF-8"
+            "Content-Type": "application/json; charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization"
         }        
     })
     .then((response) => response.json())
@@ -60,3 +63,4 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
         document.getElementById("resposta").innerHTML = "Erro ao enviar formulário.";
     });
 });
+
