@@ -34,15 +34,13 @@
 
 document.getElementById("meuFormulario").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita o comportamento padrão do formulário
-    
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email").value;
-    var senha = document.getElementById("senha").value; 
-    
-    var data = {
-        '"nome"': nome,
-        '"email"': email,
-        '"senha"': senha
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value; 
+    const data = {
+        nome: nome,
+        email: email,
+        senha: senha
     };
     console.log(data);
     fetch("https://forum-api-jr.up.railway.app/usuarios", {
