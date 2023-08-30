@@ -46,6 +46,8 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
     };
     console.log(data);
     fetch("https://forum-api-jr.up.railway.app/usuarios", {
+        mode: 'cors',
+        credentials: 'include',
         method: "POST",
         body: JSON.stringify(data),
         headers: {
