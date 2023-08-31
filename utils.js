@@ -29,19 +29,24 @@ function cadastro() {
 
 function login() {
     // get value from input 
-    const email = document.getElementById('email').value;
+    const nome = document.getElementById('nome').value;
     const senha = document.getElementById('senha').value; 
+
+    const data = ({"nome": nome, "senha": senha});
+    console.log(data);
     // create a new request object
-    const request = new Request('http://localhost:3000/api/login', {
+    const request = new Request('http://localhost:8080/login', {
         method: 'POST',
-        body: JSON.stringify({
-            email: email,
-            senha: senha
-        }),
+        body: JSON.stringify(data),
         headers: new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:8080',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type'
+
         })
     });
+    console.log(request);
     // pass request object to `fetch()`
     fetch(request)
         .then(res => res.json())
@@ -73,10 +78,10 @@ function logout() {
 }
 
 // capture the form submit event
-document.getElementById('cadastro').addEventListener('click', (event) => {
+document.getElementById('loginForm').addEventListener('submit', (event) => {
     // prevent the form from refreshing the page
     event.preventDefault();
     // call `cadastro()`
-    cadastro();
+    login();
 });
 

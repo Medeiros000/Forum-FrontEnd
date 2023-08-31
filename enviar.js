@@ -34,33 +34,32 @@
 
 document.getElementById("meuFormulario").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita o comportamento padrão do formulário
+    
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value; 
-    const data = {
-        nome: nome,
-        email: email,
-        senha: senha
-    };
+    
+    const data = ({
+        "nome": nome,
+        "email": email,
+        "senha": senha
+    });
     console.log(data);
-    fetch("https://forum-api-jr.up.railway.app/usuarios", {
-        mode: 'cors',
-        credentials: 'include',
+    fetch("http://localhost:8080/usuarios", {
         method: "POST",
-        body: JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json; charset=UTF-8",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization"
-        }        
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:5500",
+            "Access-Control-Allow-Methods": "POST",
+            "Access-Control-Allow-Headers": "Content-Type"
+        },
+        body: JSON.stringify(data)
     })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
         document.getElementById("resposta").innerHTML = "Formulário enviado com sucesso!";
     })
     .catch(error => {
         document.getElementById("resposta").innerHTML = "Erro ao enviar formulário.";
     });
 });
-
