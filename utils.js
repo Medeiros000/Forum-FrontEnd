@@ -35,12 +35,12 @@ function login() {
     const data = ({"nome": nome, "senha": senha});
     console.log(data);
     // create a new request object
-    const request = new Request('http://localhost:8080/login', {
+    const request = new Request('https://forum-jr-production.up.railway.app/login', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://localhost:8080',
+            'Access-Control-Allow-Origin': 'https://forum-jr-production.up.railway.app/cadastro.html',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'Content-Type'
 
