@@ -45,13 +45,10 @@ document.getElementById("meuFormulario").addEventListener("submit", function(eve
         "senha": senha
     });
     console.log(data);
-    fetch("http://localhost:8080/usuarios", {
+    fetch('https://forum-api-jr.up.railway.app/usuarios', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:5500",
-            "Access-Control-Allow-Methods": "POST",
-            "Access-Control-Allow-Headers": "Content-Type"
         },
         body: JSON.stringify(data)
     })

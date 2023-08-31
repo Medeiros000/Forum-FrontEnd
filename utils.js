@@ -35,8 +35,9 @@ function login() {
     const data = ({"nome": nome, "senha": senha});
     console.log(data);
     // create a new request object
-    const request = new Request('http://localhost:8080/login', {
+    const request = new Request('https://forum-api-jr.up.railway.app/login', {
         method: 'POST',
+        mode: "cors",
         body: JSON.stringify(data),
         headers: new Headers({
             'Content-Type': 'application/json'
