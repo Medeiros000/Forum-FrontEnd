@@ -71,13 +71,13 @@ function getUsuarios() {
         .then(res => res.json())
         .then(json => {
             console.log(json);
-            resposta.innerHTML = JSON.stringify(json);
+            criar_elementos(json);
         })
         .catch(err => {
             console.log(err);
         });
 }
-
+getUsuarios();
 function getTopicos() {
     console.log("getTopicos");
     // get token from localStorage
@@ -109,3 +109,37 @@ function logout() {
 }
 
 
+// Montando um corpo para a requisição
+function montarDivComJSON(jsonData) {
+    const div = document.createElement("div");
+    div.className = "json-container"; // Aplicar classe para estilização
+    // Itere sobre o array "content" no JSON
+    for (const item of jsonData.content) {
+        const subDiv = document.createElement("div");
+        subDiv.className = "json-sub"; // Aplicar classe para estilização      
+        subDiv.addEventListener = ("click", apagar_elementos);
+        // Crie elementos para cada chave-valor no objeto do array
+        for (const chave in item) {            
+            const p = document.createElement("p");
+            p.className = "json-key";
+            p.innerHTML = `<span class="json-key">${chave}:</span> <span class="json-value">${item[chave]}</span>`;
+            subDiv.appendChild(p);
+        }
+
+        div.appendChild(subDiv);
+    }
+    return div;
+}
+
+function apagar_elementos() {
+    const container = document.getElementById("json_container");
+    container.innerHTML = "";
+}
+
+function criar_elementos(json) {
+    console.log(criar_elementos);
+    const container = document.getElementById("json_container");
+    container.innerHTML = "";
+    // Elemento container
+    container.appendChild(montarDivComJSON(json));
+}

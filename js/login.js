@@ -34,6 +34,12 @@ function login() {
         });
 }
 
+// montando o elemento com o json na div resposta
+const resposta = document.createElement('div');
+resposta.setAttribute('id', 'resposta');
+document.body.appendChild(resposta);
+
+
 // capture the form submit event
 document.getElementById('loginForm').addEventListener('submit', (event) => {
     // prevent the form from refreshing the page

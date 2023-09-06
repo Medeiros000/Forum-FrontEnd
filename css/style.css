@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0e8e8;
+    padding: 20px;
+}
+.link {
+    font-size: 42px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #020202;
+    
+}
+.json-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+.json-sub {
+    background-color: #756c6c;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.json-key {
+    font-weight: bold;
+    color: #020202;
+}
+
+.json-value {
+    color: #ffffff;
+}
+a {
+    text-decoration: none; 
+}
