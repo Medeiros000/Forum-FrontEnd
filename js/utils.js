@@ -1,13 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const usuarios = document.getElementById('usuarios');
     if (usuarios) {
         usuarios.onclick = getUsuarios;
-    }
+    };
 
     const topicos = document.getElementById('topicos');
     if (topicos) {
-        topicos.onclick = getTopicos;
-    }
+        if (localStorage.getItem("jwtToken") == null) {
+            resposta.innerHTML = "Você precisa estar logado para acessar os tópicos.";
+        } else {
+            topicos.onclick = getTopicos;
+        }
+    };
 
     const logoutButton = document.getElementById('logout');
     if (logoutButton) {
@@ -27,7 +31,7 @@ function handleSuccessfulLogin(token) {
 
 function cadastro() {
     // get value from input 
-    const nome = document.getElementById('nome').value;     
+    const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
     // create a new request object
@@ -119,7 +123,7 @@ function montarDivComJSON(jsonData) {
         subDiv.className = "json-sub"; // Aplicar classe para estilização      
         subDiv.addEventListener = ("click", apagar_elementos);
         // Crie elementos para cada chave-valor no objeto do array
-        for (const chave in item) {            
+        for (const chave in item) {
             const p = document.createElement("p");
             p.className = "json-key";
             p.innerHTML = `<span class="json-key">${chave}:</span> <span class="json-value">${item[chave]}</span>`;

@@ -6,9 +6,9 @@ function handleSuccessfulLogin(token) {
 function login() {
     // get value from input 
     const nome = document.getElementById('nome').value;
-    const senha = document.getElementById('senha').value; 
+    const senha = document.getElementById('senha').value;
 
-    const data = ({"nome": nome, "senha": senha});
+    const data = ({ "nome": nome, "senha": senha });
     console.log(data);
     // create a new request object
     const request = new Request('https://forum-api-jr.up.railway.app/login', {
@@ -26,8 +26,8 @@ function login() {
         .then(json => {
             console.log(json);
             handleSuccessfulLogin(json.token);
-            resposta.innerHTML = "Login efetuado com sucesso!"+
-            '<a href="/index.html">Voltar</a>';
+            resposta.innerHTML = "Login efetuado com sucesso!" +
+                '<a href="/index.html">Voltar</a>';
         })
         .catch(err => {
             console.log(err);
@@ -44,6 +44,6 @@ document.body.appendChild(resposta);
 document.getElementById('loginForm').addEventListener('submit', (event) => {
     // prevent the form from refreshing the page
     event.preventDefault();
-    
+
     login();
 });

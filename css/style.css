@@ -6,13 +6,14 @@ body {
     background-color: #f0e8e8;
     padding: 20px;
 }
+
 .link {
     font-size: 42px;
     font-weight: bold;
     text-decoration: none;
     color: #020202;
-    
 }
+
 .json-container {
     display: flex;
     flex-direction: column;
@@ -21,8 +22,8 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-
 }
+
 .json-sub {
     background-color: #756c6c;
     padding: 10px;
@@ -30,6 +31,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
 .json-key {
     font-size: small;
     font-weight: bold;
@@ -40,9 +42,20 @@ body {
     font-size: small;
     color: #ffffff;
 }
-a {
-    text-decoration: none; 
+
+.logout {
+    font-size: 8px;
+    font-weight: bold;
+    color: #020202;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+a {
+    text-decoration: none;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -52,9 +65,22 @@ form {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-input{
+
+input {
     font-family: Arial, sans-serif;
     font-size: smaller;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    font-family: Arial, sans-serif;
+    font-size: smaller;
+    font-weight: bold;
+    width: 100px;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
