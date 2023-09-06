@@ -4,7 +4,7 @@ function getTopicos() {
     // get token from localStorage
     const token = localStorage.getItem("jwtToken");
     // create a new request object
-    const request = new Request('http://localhost:8080/topicos', {
+    const request = new Request('https://forum-api-jr.up.railway.app/topicos', {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',

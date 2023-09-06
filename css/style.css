@@ -31,11 +31,13 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .json-key {
+    font-size: small;
     font-weight: bold;
     color: #020202;
 }
 
 .json-value {
+    font-size: small;
     color: #ffffff;
 }
 a {
