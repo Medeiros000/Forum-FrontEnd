@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<a href="/index.html" ><span class="link">Fórum Jr</span></a><br>
+<body>
+    <a href="/index.html" ><span class="link">Fórum Jr</span></a><br>
 
-    Login
-    <form id="loginForm">
-        <input type="text" name="nome" id="nome" placeholder="Nome">
-        <input type="text" name="senha" id="senha" placeholder="Senha">
-        <input type="submit" value="Enviar">
-    </form>
+    
+    <div id="json-container">
+        
+        <form id="loginForm">
+            <p id="json-key">Login</p>
+            <input type="text" name="nome" id="nome" placeholder="Nome">
+            <input type="text" name="senha" id="senha" placeholder="Senha">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
     <div id="resposta"></div>
 
     <script src="/js/login.js"></script>
