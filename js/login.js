@@ -26,8 +26,12 @@ function login() {
         .then(json => {
             console.log(json);
             handleSuccessfulLogin(json.token);
-            resposta.innerHTML = "Login efetuado com sucesso!" +
-                '<a href="/index.html">Voltar</a>';
+            if (json.token == undefined) {
+                resposta.innerHTML = "Login não efetuado!"
+            } else {
+                resposta.innerHTML = "Login efetuado com sucesso!" +
+                    '<a href="/index.html">Voltar</a>';
+            }
         })
         .catch(err => {
             console.log(err);
@@ -46,4 +50,10 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
     event.preventDefault();
 
     login();
+});
+
+var input = document.querySelector('#senha');
+var img = document.querySelector('#olho');
+img.addEventListener('click', function () {
+    input.type = input.type == 'text' ? 'password' : 'text';
 });

@@ -66,6 +66,15 @@ form {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+#olho {
+    position: relative;
+    left: 52%;
+    bottom: 105px;
+    height: 1.7em;
+    cursor: pointer;
+
+}
+
 input {
     font-family: Arial, sans-serif;
     font-size: smaller;
