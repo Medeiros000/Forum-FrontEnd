@@ -52,8 +52,8 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
     login();
 });
 
-var input = document.querySelector('#senha');
-var img = document.querySelector('#olho');
+const input = document.querySelector('#senha');
+const img = document.querySelector('#olho');
 img.addEventListener('click', function () {
     input.type = input.type == 'text' ? 'password' : 'text';
 });
