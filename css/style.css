@@ -68,25 +68,34 @@ form {
 }
 
 #olho {
-    position: relative;
-    left: 38%;
-    bottom: 104px;
+    display: block;
+    position:absolute;
+    left: 80%;
+    bottom: 16px;
     height: 1.7em;
     cursor: pointer;
 }
 
+.olhos{
+    display: flex; 
+    position: relative; 
+    width: 100%;
+}
+
 #olho2 {
-    position: relative;
-    left: 38%;
-    bottom: 44%;
+    display: block;
+    position:absolute;
+    left: 80%;
+    bottom: 16px;
     height: 1.7em;
     cursor: pointer;
 }
 
 #olho3 {
-    position: relative;
-    left: 38%;
-    bottom: 36%;
+    display: block;
+    position:absolute;
+    left: 80%;
+    bottom: 16px;
     height: 1.7em;
     cursor: pointer;
 }
@@ -101,6 +110,11 @@ form {
 
 #img {
     height: 3em;
+    display: block;
+    position: fixed;
+    left: 80%;
+    bottom: 15%;
+    cursor: pointer;
 }
 
 .subtitulo {
@@ -111,6 +125,7 @@ form {
 }
 
 input {
+    display: block;
     font-family: Arial, sans-serif;
     font-size: smaller;
     font-weight: bold;

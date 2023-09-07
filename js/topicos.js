@@ -1,9 +1,8 @@
 // Enviando a requisição do json
 function getTopicos() {
-    ;
-    // get token from localStorage
+    // Recuperando o token do localStorage
     const token = localStorage.getItem("jwtToken");
-    // create a new request object
+    // Criando um novo objeto de requisição
     const request = new Request('https://forum-api-jr.up.railway.app/topicos', {
         method: 'GET',
         headers: new Headers({
@@ -11,17 +10,17 @@ function getTopicos() {
             'Authorization': `Bearer ${token}`
         })
     });
-    // pass request object to `fetch()`
+    // Passando o objeto de requisição para o `fetch()`
     fetch(request)
         .then(res => res.json())
         .then(json => {
-            console.log(json);
-            criar_elementos(json)
+            console.log(json); // Log do JSON retornado
+            criar_elementos(json) // Montando o elemento com o JSON
         })
         .catch(err => {
-            const container = document.getElementById("json_container");
-            container.innerHTML = err;
-            console.log(err);
+            const container = document.getElementById("json_container"); // Selecionando a div
+            container.innerHTML = err; // Adicionando o erro na div
+            console.log(err); // Log do erro
         });
 }
 getTopicos();
