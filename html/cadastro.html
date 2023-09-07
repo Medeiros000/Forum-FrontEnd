@@ -12,16 +12,19 @@
 <body>
     <a href="/index.html"><span class="link">Fórum Jr</span></a><br>
 
-
-    <form id="meuFormulario">
-        <p id="json-key">Cadastro</p>
-        <input type="text" name="nome" id="nome" placeholder="Nome">
-        <input type="text" name="email" id="email" placeholder="Email"><br>
-        <input type="text" name="senha" id="senha" placeholder="Senha">
-        <input type="text" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar Senha"><br>
-        <input type="submit" value="Enviar">
-        <div id="resposta"></div>
-    </form>
+    <div class="json-container">
+        <form id="meuFormulario" class="json-sub">
+            <p class="subtitulo">Cadastro</p>
+            <input type="text" name="nome" id="nome" placeholder="Nome">
+            <input type="text" name="email" id="email" placeholder="Email"><br>
+            <input type="password" name="senha" id="senha" placeholder="Senha">
+            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar Senha"><br>
+            <input type="submit" value="Enviar">
+            <img src="/img/olho.png" id="olho2" alt="">
+            <img src="/img/olho.png" id="olho3" alt="">
+            <div id="resposta"></div>
+        </form>
+    </div>
     <div id="resposta"></div>
     <script src="/js/enviar.js"></script>
 </body>

@@ -68,11 +68,45 @@ form {
 
 #olho {
     position: relative;
-    left: 52%;
-    bottom: 105px;
+    left: 38%;
+    bottom: 104px;
     height: 1.7em;
     cursor: pointer;
+}
 
+#olho2 {
+    position: relative;
+    left: 38%;
+    bottom: 163px;
+    height: 1.7em;
+    cursor: pointer;
+}
+
+#olho3 {
+    position: relative;
+    left: 38%;
+    bottom: 130px;
+    height: 1.7em;
+    cursor: pointer;
+}
+
+#imgDiv {
+    position: relative;
+    top: 600px;
+    left: 500px;
+    height: 3em;
+    cursor: pointer;
+}
+
+#img {
+    height: 3em;
+}
+
+.subtitulo {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
 }
 
 input {

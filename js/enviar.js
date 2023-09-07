@@ -7,6 +7,10 @@ document.getElementById("meuFormulario").addEventListener("submit", function (ev
     const senha = document.getElementById("senha").value;
     const confSenha = document.getElementById("confirmarSenha").value;
     const resposta = document.getElementById("resposta");
+    if (nome == "" || email == "" || senha == "" || confSenha == "") {
+        document.getElementById("resposta").innerHTML = "Preencha todos os campos.";
+        return;
+    }
     if (senha != confSenha) {
         document.getElementById("resposta").innerHTML = "Senhas não conferem.";
         return;
@@ -32,4 +36,15 @@ document.getElementById("meuFormulario").addEventListener("submit", function (ev
         .catch(error => {
             resposta.innerHTML = "Erro ao enviar formulário.";
         });
+});
+const input = document.querySelector('#senha');
+const img = document.querySelector('#olho2');
+img.addEventListener('click', function () {
+    input.type = input.type == 'text' ? 'password' : 'text';
+});
+
+const input2 = document.querySelector('#confirmarSenha');
+const img2 = document.querySelector('#olho3');
+img2.addEventListener('click', function () {
+    input2.type = input2.type == 'text' ? 'password' : 'text';
 });

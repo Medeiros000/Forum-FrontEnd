@@ -137,3 +137,8 @@ function topico_detalhe(jsonData) {
     }
     return div;
 }
+
+const voltar = document.getElementById("imgDiv");
+voltar.addEventListener("click", function () {
+    getTopicos();
+});
